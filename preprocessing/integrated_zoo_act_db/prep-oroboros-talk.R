@@ -5,8 +5,9 @@ library(MonetDB.R)
 library(RMySQL)
 library(rjson)
 
-#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="bokker",pwd="bokker")
-conn <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "zoo_act")
+#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="",pwd="")
+
+conn <- dbConnect(dbDriver("MySQL"), user = "", password = "", dbname = "zoo_act")
 
 #create the activity db
 # tstamp (timestamp of activity)
@@ -28,7 +29,7 @@ conn <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "zoo
 #dbSendQuery(conn, "CREATE TABLE zoo_act_tags (actid varchar(255), ctag varchar(255));")
 
 #PH talk (from mongo db)
-mongo <- mongo.create(host="sociamvm-zooniverse.ecs.soton.ac.uk")
+mongo <- mongo.create(host="<server>")
 
 # classification and talk data for (all from mongo db)
 # andromeda

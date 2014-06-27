@@ -7,12 +7,12 @@ library(rjson)
 
 #options(error=recover)
 
-#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="bokker",pwd="bokker")
+#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="",pwd="")
 
-conn <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "zoo_act")
+conn <- dbConnect(dbDriver("MySQL"), user = "", password = "", dbname = "zoo_act")
 
 #SF talk (from mongo db)
-mongo <- mongo.create(host="sociamvm-zooniverse.ecs.soton.ac.uk")
+mongo <- mongo.create(host="<server>")
 
 db <- "andromeda_production"
 coll <- "comments"

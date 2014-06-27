@@ -5,11 +5,11 @@ library(MonetDB.R)
 library(RMySQL)
 library(rjson)
 
-#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="bokker",pwd="bokker")
+#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="",pwd="")
 
-conn <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "planet_production")
-conn2 <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "zoo_act")
-mongo <- mongo.create(host="sociamvm-zooniverse.ecs.soton.ac.uk")
+conn <- dbConnect(dbDriver("MySQL"), user = "", password = "", dbname = "planet_production")
+conn2 <- dbConnect(dbDriver("MySQL"), user = "", password = "", dbname = "zoo_act")
+mongo <- mongo.create(host="<server>")
 curs <- dbGetQuery(conn,"select c.id as actid, c.zooniverse_user_id as author_id, l.zooniverse_id as mentions, c.created_at as created_at from classifications as c INNER JOIN light_curves as l ON c.light_curve_id=l.id")
 
 f <- function(x){

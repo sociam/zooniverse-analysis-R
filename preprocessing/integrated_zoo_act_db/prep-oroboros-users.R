@@ -4,7 +4,7 @@ library(zoo)
 library(MonetDB.R)
 library(rjson)
 
-conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="bokker",pwd="bokker")
+conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="",pwd="")
 
 #create the user db
 dbSendQuery(conn, "CREATE TABLE zoo_users (zooid varchar(255), ccount INT, fcount INT, adm INT);")
@@ -12,7 +12,7 @@ dbSendQuery(conn, "CREATE TABLE zoo_users_class (zooid varchar(255), ccount varc
 dbSendQuery(conn, "CREATE TABLE zoo_users_favs (zooid varchar(255), fcount varchar(255), pid varchar(255));")
 
 #PH talk (from mongo db)
-mongo <- mongo.create(host="sociamvm-zooniverse.ecs.soton.ac.uk")
+mongo <- mongo.create(host="<server>")
 
 db <- "zooniverse"
 coll <- "users"

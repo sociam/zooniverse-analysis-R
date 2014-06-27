@@ -5,8 +5,8 @@ library(MonetDB.R)
 library(RMySQL)
 library(rjson)
 
-#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="bokker",pwd="bokker")
-conn <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "zoo_act")
+#conn <- dbConnect(dbDriver("MonetDB"), "monetdb://localhost/voc",uid="",pwd="")
+conn <- dbConnect(dbDriver("MySQL"), user = "", password = "", dbname = "zoo_act")
 
 #ds1 <- dbGetQuery(conn,"select a.actid from zoo_act as a where a.ctype = 'task';")
 
@@ -16,7 +16,7 @@ conn <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "zoo
 
 #tmp <- dbGetQuery(conn,"delete from zoo_act WHERE ctype ='task'")
 
-mongo <- mongo.create(host="sociamvm-zooniverse.ecs.soton.ac.uk")
+mongo <- mongo.create(host="<server>")
 
 
 # proceed with classification data for all projects

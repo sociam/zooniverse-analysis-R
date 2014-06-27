@@ -5,10 +5,10 @@ library(MonetDB.R)
 library(RMySQL)
 library(rjson)
 
-conn <- dbConnect(dbDriver("MySQL"), user = "root", password = "", dbname = "zoo_act")
+conn <- dbConnect(dbDriver("MySQL"), user = "", password = "", dbname = "zoo_act")
 
 
-mongo <- mongo.create(host="sociamvm-zooniverse.ecs.soton.ac.uk")
+mongo <- mongo.create(host="<server>")
 
 # PH
 db <- "sellers"
